@@ -3,25 +3,23 @@
   "build": {
     "dockerfile": "dockerfile"
   },
-  "containerEnv": {
-    "GOPATH": "/var/app"
-  },
+  "workspaceFolder": "/var/app",
   "capAdd": ["SYS_PTRACE"],
   "securityOpt": ["seccomp=unconfined"],
   "remoteUser": "vscode",
+  "postCreateCommand": "sudo chown -R vscode:vscode /var/app",
   "customizations": {
     "vscode": {
       "extensions": [
         "golang.Go",
+        "golang.go",
         "github.copilot",
         "esbenp.prettier-vscode",
-        "akamud.vscode-theme-onedark",
-        "ms-azuretools.vscode-docker"
+        "akamud.vscode-theme-onedark"
       ],
       "settings": {
         "workbench.colorTheme": "Atom One Dark",
-        "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
-        "editor.tabSize": 2,
+        "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
         "[go]": {
           "editor.insertSpaces": false,
           "editor.formatOnSave": true,
