@@ -10,12 +10,18 @@
   "securityOpt": ["seccomp=unconfined"],
   "remoteUser": "vscode",
   "customizations": {
-	  "vscode": {
-		  "extensions": [
-			  "golang.Go",
+    "vscode": {
+      "extensions": [
+        "golang.Go",
         "github.copilot",
-		  ],
+        "esbenp.prettier-vscode",
+        "akamud.vscode-theme-onedark",
+        "ms-azuretools.vscode-docker"
+      ],
       "settings": {
+        "workbench.colorTheme": "Atom One Dark",
+        "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+        "editor.tabSize": 2,
         "[go]": {
           "editor.insertSpaces": false,
           "editor.formatOnSave": true,
@@ -24,6 +30,6 @@
           }
         }
       }
-  	}
+    }
   }
 }
