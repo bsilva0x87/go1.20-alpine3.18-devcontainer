@@ -1,0 +1,29 @@
+{
+  "name": "Go 1.20 Alpine 3.18",
+  "build": {
+    "dockerfile": "dockerfile"
+  },
+  "containerEnv": {
+    "GOPATH": "/var/app"
+  },
+  "capAdd": ["SYS_PTRACE"],
+  "securityOpt": ["seccomp=unconfined"],
+  "remoteUser": "vscode",
+  "customizations": {
+	  "vscode": {
+		  "extensions": [
+			  "golang.Go",
+        "github.copilot",
+		  ],
+      "settings": {
+        "[go]": {
+          "editor.insertSpaces": false,
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+          }
+        }
+      }
+  	}
+  }
+}
